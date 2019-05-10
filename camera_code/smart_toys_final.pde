@@ -91,15 +91,14 @@ void draw() {
   }
 
 
-//updatePixels();                                    //  must call updatePixels oce were done messing with pixels[]
-//println (frameRate);
+  //updatePixels();                                    //  must call updatePixels oce were done messing with pixels[]
+  //println (frameRate);
 }
 
 float rann;
 void mouseClicked() {
 
   rann = random(50);
-
 }
 
 void PxPGetPixel(int x, int y, int[] pixelArray, int pixelsWidth) {
@@ -112,40 +111,42 @@ void PxPGetPixel(int x, int y, int[] pixelArray, int pixelsWidth) {
 
 void colorRange(int totalColors) {
   int average = totalColors / 3;
-  if (average < 20) {
-    if (!file0.isPlaying() && count0 == 0) {
+  if (average < 100) {
+    if (!file0.isPlaying() && count0 %3 == 0) {
       file0.play();
-      count0++;
+      //count0++;
+      //println(count0);
     }
   }
-  if (20 < average && average < 60) {
-    if (!file1.isPlaying() && count1 == 0) {
+  if (25 < average && average < 150) {
+    if (!file1.isPlaying() && count0%4 == 0) {
       file1.play();
-      count1++;
+      //count0++;
     }
   }
-  if (60 < average && average < 100) {
-    if (!file2.isPlaying() && count2 == 0) {
+  if (50 < average && average < 200) {
+    if (!file2.isPlaying() && count0%5 == 0) {
       file2.play();
-      count2++;
+      //count0++;
     }
   }
-  if (100 < average && average < 140) {
-    if (!file3.isPlaying() && count3 == 0) {
+  if (25 < average && average < 150) {
+    if (!file3.isPlaying() && count0%6 == 0) {
       file3.play();
-      count3++;
+      //count3++;
     }
   }
-  if (140 < average && average < 180) {
-    if (!file4.isPlaying() && count4 == 0) {
+  if (0 < average && average < 200) {
+    if (!file4.isPlaying() && count0%5 == 0) {
       file4.play();
-      count4++;
+      //count4++;
     }
   }
-  if (180 < average && average < 200) {
-    if (!file5.isPlaying() && count5 == 0) {
+  if (100 < average && average < 200) {
+    if (!file5.isPlaying() && count0%5 == 0) {
       file5.play();
-      count5++;
+      //count0++;
     }
   }
+  count0++;
 }
